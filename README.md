@@ -5,9 +5,9 @@ Il repository contiene le varie parti richieste nella consegna del progetto di S
 - La cartella `Application` contiene il codice sviluppato
 - Il pdf riportato è la relazione prodotta
 - Di seguito vi è la descrizione di howto del programma
- - Installazione
- - Configurazione
- - Esecuzione
+ -- Installazione
+ -- Configurazione
+ -- Esecuzione
 ### Configurazione iniziale
 La configurazione iniziale che è riportata nel progetto prevede che allo start vengano istanziati:
 - 3 peer      node
