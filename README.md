@@ -49,3 +49,7 @@ Per poter eseguire i test bisogna modificare il valore di `Launch_Test` a `true`
 ```sh
 ./start.sh -b
 ``` 
+
+## Repository originale
+Il repository del codice utilizzato per il versioning si trova all'indirizzo:
+- [SDCC_Project](https://github.com/IlConteCvma/SDCC_Project.git) 
