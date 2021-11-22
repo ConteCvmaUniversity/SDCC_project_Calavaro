@@ -14,7 +14,7 @@ La configurazione iniziale che è riportata nel progetto prevede che allo start 
 - 1 sequencer node
 - 1 register  node
 
-##HOWTO
+## HOWTO
 
 ### Installazione
 Non vi sono particolari accorgimenti da prendere per poter eseguire l'applicazione, è necessario avere `docker-compose` installato.
