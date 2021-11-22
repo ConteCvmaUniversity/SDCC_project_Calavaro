@@ -1,0 +1,16 @@
+FROM golang:1.16-alpine
+
+WORKDIR /go/src/app
+
+ENV GO111MODULE=on
+
+RUN go mod init github.com/IlConteCvma/SDCC_Project
+RUN go mod tidy
+
+COPY sequencer/*.go ./sequencer/
+COPY utility/*.go ./utility/
+
+
+RUN go install ./sequencer
+
+CMD [ "sh", "-c", "${GOPATH}/bin/sequencer" ]

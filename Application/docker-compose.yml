@@ -1,0 +1,58 @@
+networks:
+  local_net:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.10.1.0/24
+         gateway: 10.10.1.1
+volumes:
+  appVolume:
+services:
+  sequencer:
+    build:
+      context: .
+      dockerfile: ./sequencer/DockerFile
+    tmpfs:
+      - /run
+      - /tmp
+    networks:
+      local_net:
+        ipv4_address: ${SEQADDR}
+    ports:
+      - "8001:$SERVERPORT"
+    links:
+      - register_node
+
+  register_node:
+    build: 
+      context: .
+      dockerfile: ./register/DockerFile
+    tmpfs:
+      - /run
+      - /tmp
+
+    networks:
+      local_net:
+        ipv4_address: ${SERVERADDR}
+    ports:
+      - "8000:$SERVERPORT"
+
+  peer:
+    build: 
+      context: .
+      dockerfile: ./peer/DockerFile
+    networks:
+      - local_net
+    ports:      
+      - "1234"
+    volumes:
+      - appVolume:/go/src/app/peer/files
+
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    links:
+      - register_node
+      - sequencer
+    deploy:
+      mode: replicated
+      replicas: ${MAXPEERS}
