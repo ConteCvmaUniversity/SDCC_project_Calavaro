@@ -24,6 +24,7 @@ Per poter eseguire il programma è necessario lanciare gli script dalla cartella
 Per poter eseguire la configurazione del progetto bisogna modificare i seguenti file:
 - `.env` per modificare i parametri del docker-compose.yml
 - `Application/utility/static_config.go` per modificare i parametri dell'applicazione
+
 Salvate le opportune modifiche si potrà lanciare l'architettura tramite il comando:
 ```sh
 ./start.sh -b
