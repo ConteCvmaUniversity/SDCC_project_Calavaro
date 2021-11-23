@@ -3,7 +3,7 @@
 ## Descrizione repository
 Il repository contiene le varie parti richieste nella consegna del progetto di SDCC:
 - La cartella `Application` contiene il codice sviluppato
-- Il pdf riportato è la relazione prodotta
+- Il pdf riportato è la relazione prodotta `Relazione Calavaro.pdf`
 - Di seguito vi è la descrizione di howto del programma
 	- Installazione
 	- Configurazione
